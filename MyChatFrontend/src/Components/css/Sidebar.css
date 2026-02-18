@@ -1,0 +1,19 @@
+/* Icon circle */
+.icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover ONLY icon background */
+.sidebar .nav-link:hover .icon-wrap,
+.sidebar .btn:hover .icon-wrap {
+  background-color: black;
+}
+
+/* Click feedback */
+.icon-wrap:active {
+  transform: scale(0.92);
+}

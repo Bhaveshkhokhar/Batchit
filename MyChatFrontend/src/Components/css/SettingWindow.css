@@ -1,0 +1,164 @@
+.setting-container {
+  width: 360px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2a3942;
+}
+
+/* ---------- THEMES ---------- */
+
+.setting-container.dark {
+  background: #202c33;
+  color: #e9edef;
+}
+
+.setting-container.light {
+  background: #e9edef;
+  color: #202c33;
+}
+
+/* ---------- HEADER ---------- */
+
+.setting-header {
+  padding: 16px;
+}
+
+.setting-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* ---------- SEARCH ---------- */
+
+.setting-search {
+  margin: 8px 16px 16px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.setting-container.light .setting-search {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.setting-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+}
+
+.search-icon {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* ---------- SCROLL AREA ---------- */
+
+.setting-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* scrollbar (optional, looks clean) */
+.setting-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.setting-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.setting-container.light .setting-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- USER ---------- */
+
+.setting-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.setting-user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.setting-user span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ---------- DIVIDER ---------- */
+
+.setting-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 8px 0;
+}
+
+.setting-container.light .setting-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- SETTING ITEM ---------- */
+
+.setting-item {
+  margin: 8px;
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.setting-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.setting-container.light .setting-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.setting-item svg {
+  font-size: 22px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.setting-item h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.setting-item p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.setting-item.logout {
+  color: #ff4d4f; /* red */
+}
+
+.setting-item.logout svg {
+  color: #ff4d4f;
+}
+
+.setting-item.logout:hover {
+  background: rgba(255, 77, 79, 0.12);
+}

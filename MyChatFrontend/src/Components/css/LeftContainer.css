@@ -1,0 +1,15 @@
+.left-container {
+  width: 360px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2a3942;
+}
+.left-container.dark {
+  background: #202c33;
+  color: #e9edef;
+}
+.left-container.light {
+  background: #e9edef;
+  color: #202c33;
+}

@@ -1,0 +1,39 @@
+.right-window {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center content */
+.right-window-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icon */
+.profile-icon {
+  font-size: 90px;
+}
+
+/* Text */
+.right-window-content h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Dark Mode */
+.right-window.dark {
+  background-color: #202c33;
+  color: #e9edef;
+}
+
+/* Light Mode */
+.right-window.light {
+  background-color: #e9edef;
+  color: #202c33;
+}
