@@ -1,6 +1,6 @@
 import Chat from "./Chat";
 import ChatListHeader from "./ChatListHeader";
-import "./css/chatList.css";
+import "./css/ChatList.css";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 const chats = [
