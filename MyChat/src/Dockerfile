@@ -12,15 +12,24 @@ COPY src ./src
 # Package the application
 RUN mvn clean package -DskipTests
 
-# ====== Stage 2: Run the JAR ======
+
+# ====== Stage 2: Run the JAR with Infisical ======
 FROM eclipse-temurin:23-jdk
 WORKDIR /app
 
-# Copy built jar from stage 1
+# Install curl + Infisical CLI
+RUN apt-get update && apt-get install -y curl \
+    && curl -1sLf https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh | bash \
+    && apt-get install -y infisical \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy built jar
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose port (change if your app uses different port)
+# Render provides PORT dynamically
+ENV PORT=8080
 EXPOSE 8080
 
-# Start the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Start app via Infisical
+CMD ["sh", "-c", "infisical run -- java -jar app.jar"]
