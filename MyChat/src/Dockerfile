@@ -1,5 +1,5 @@
 # ====== Stage 1: Build the JAR ======
-FROM maven:3.9.6-eclipse-temurin-23 AS build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy pom.xml and download dependencies
@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTests
 
 
 # ====== Stage 2: Run the JAR with Infisical ======
-FROM eclipse-temurin:23-jdk
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Install curl + Infisical CLI
