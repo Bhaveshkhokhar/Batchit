@@ -32,4 +32,5 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Start app via Infisical
-CMD ["sh", "-c", "infisical run -- java -jar app.jar"]
+CMD ["sh", "-c", "infisical run --projectId=$INFISICAL_PROJECT_ID --env=$INFISICAL_ENVIRONMENT -- java -Dserver.port=$PORT -jar app.jar"]
+
