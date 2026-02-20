@@ -80,8 +80,6 @@ const LandingPage = () => {
 
     setLoadingOtpState(true);
     try {
-      console.log("ENV =", import.meta.env);
-console.log("BACKEND =", import.meta.env.VITE_BACKEND_URL);
 
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, {
         credentials:"include",
