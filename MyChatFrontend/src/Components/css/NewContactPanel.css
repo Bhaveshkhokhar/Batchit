@@ -1,0 +1,181 @@
+/* ===== Container ===== */
+.newcontact-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  animation: slideInLeft 0.22s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.newcontact-panel.dark {
+  background: #202c33;
+  color: #e9edef;
+}
+
+.newcontact-panel.light {
+  background: #e9edef;
+  color: #202c33;
+}
+
+/* ===== Header ===== */
+.newcontact-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+}
+
+.newcontact-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.newcontact-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.newcontact-panel.dark .newcontact-back {
+  color: #e9edef;
+}
+
+.newcontact-panel.light .newcontact-back {
+  color: #202c33;
+}
+
+.newcontact-panel.dark .newcontact-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.newcontact-panel.light .newcontact-back:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* ===== Avatar ===== */
+.newcontact-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 16px;
+}
+
+.newcontact-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #00a884;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Form ===== */
+.newcontact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 24px 24px;
+}
+
+.newcontact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.newcontact-field label {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.newcontact-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid;
+  outline: none;
+  font-size: 16px;
+  padding: 6px 0;
+  width: 100%;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+
+.newcontact-panel.dark .newcontact-field input {
+  border-color: #3b4a54;
+}
+
+.newcontact-panel.light .newcontact-field input {
+  border-color: #b2bec6;
+}
+
+.newcontact-panel.dark .newcontact-field input:focus {
+  border-color: #00a884;
+}
+
+.newcontact-panel.light .newcontact-field input:focus {
+  border-color: #00a884;
+}
+
+.newcontact-counter {
+  align-self: flex-end;
+  font-size: 12px;
+  opacity: 0.45;
+  margin-top: 2px;
+}
+
+/* ===== Save button ===== */
+.newcontact-save {
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: #00a884;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, opacity 0.18s;
+}
+
+.newcontact-save:hover:not(:disabled) {
+  background: #008069;
+}
+
+.newcontact-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.newcontact-save.loading {
+  opacity: 0.7;
+}

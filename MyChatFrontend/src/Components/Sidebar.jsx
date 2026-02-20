@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { BsChatSquareTextFill } from "react-icons/bs";
 import { RiChatSmile2Line, RiChatVoiceAiLine } from "react-icons/ri";
 import { MdAddCall, MdUpdate, MdDarkMode, MdLightMode } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import "./css/Sidebar.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "../Context/User";
+import defaultimage from "../assets/image/defaultimage.png";
 
 
 function Sidebar({changeState,dark,setDark}) {
+  const { userDetail, loadingUser, updateUserDetail } = useContext(UserContext);
   
-
+const image =
+    userDetail.profilePicturePreSignedURL === "default" ||
+    !userDetail.profilePicturePreSignedURL
+      ? defaultimage
+      : userDetail.profilePicturePreSignedURL;
   const iconColor = dark ? "#ffffff" : "#202c33"; // 👈 MAGIC LINE
 
   return (
@@ -90,7 +97,7 @@ function Sidebar({changeState,dark,setDark}) {
         <div className=" p-3">
           <Link to="/profile">
           <img
-            src="https://github.com/mdo.png"
+            src={image}
             alt="profile"
             width="24"
             height="24"

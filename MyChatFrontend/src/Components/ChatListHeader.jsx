@@ -1,14 +1,14 @@
 import { BsSearch, BsThreeDotsVertical } from "react-icons/bs";
 import { RiChatNewLine } from "react-icons/ri";
 
-function ChatListHeader() {
+function ChatListHeader({ onNewChat, query, setQuery }) {
   return (
     <>
       {/* Header */}
       <div className="chatlist-header">
         <h2>Chats</h2>
         <div className="header-icons">
-          <RiChatNewLine size={22}/>
+          <RiChatNewLine size={22} onClick={onNewChat} style={{ cursor: "pointer" }} />
           <BsThreeDotsVertical size={22} />
         </div>
       </div>
@@ -16,7 +16,7 @@ function ChatListHeader() {
       {/* Search */}
       <div className="chatlist-search">
         <BsSearch />
-        <input placeholder="Ask Meta AI or Search" />
+        <input placeholder="Ask Meta AI or Search" value={query} onChange={e => setQuery(e.target.value)} />
       </div>
 
       {/* Filters */}
