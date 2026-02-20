@@ -76,6 +76,7 @@ public class AuthController {
     public ResponseEntity<ApiResponse<LoginResponse>> login( @Valid @RequestBody LoginRequest loginRequest){
        return  authService.login(loginRequest.getPhoneNumber());
     }
+
     @PostMapping("/logout")
     public ResponseEntity<ApiResponse<Void>> logout(HttpServletResponse response){
         ResponseCookie deleteCookie = ResponseCookie.from("jwtToken", "")

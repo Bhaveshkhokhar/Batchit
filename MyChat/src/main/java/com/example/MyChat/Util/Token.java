@@ -31,8 +31,8 @@ public class Token {
     public void setToken(String token, HttpServletResponse response){
         ResponseCookie cookie = ResponseCookie.from("jwtToken", token)
                 .httpOnly(true)
-                .secure(true)            // true in production (HTTPS)
-                .sameSite("None")          // use "None" + secure=true for cross-domain
+                .secure(false)            // true in production (HTTPS)
+                .sameSite("Lax")          // use "None" + secure=true for cross-domain
                 .path("/")
                 .maxAge(24 * 60 * 60 * 30)     // 30 day
                 .build();

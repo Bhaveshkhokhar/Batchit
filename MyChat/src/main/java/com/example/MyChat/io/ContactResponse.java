@@ -8,11 +8,10 @@ import lombok.Setter;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @Setter
-public class UserDetailsResponse {
-    UserDetails user;
-    List<ConversationResponse> chats;
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class ContactResponse {
+    List<ContactBody> contacts;
+    String message;
 }

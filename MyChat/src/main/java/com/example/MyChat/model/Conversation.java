@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 public class Conversation {
 
     @Id
-    @Column(length = 36)
+    @Column(length = 36,nullable = false, updatable = false)
     private String id;   // UUID (generated in backend)
 
     @Enumerated(EnumType.STRING)
@@ -42,4 +42,13 @@ public class Conversation {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
+
+    @Builder.Default
+    @Column(name= "group_dp")
+    private  String GroupDpMediaKey="default";
+
+    @Column(name="group_name",nullable=false)
+    private String name ="one_to_one";
+
+
 }

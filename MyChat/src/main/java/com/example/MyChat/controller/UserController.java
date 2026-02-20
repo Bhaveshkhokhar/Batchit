@@ -2,7 +2,6 @@ package com.example.MyChat.controller;
 
 import com.example.MyChat.io.*;
 import com.example.MyChat.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -14,7 +13,7 @@ public class UserController {
     @Autowired
     UserService userService;
     @PostMapping("/userName")
-    public ResponseEntity<ApiResponse<UserDetailsResponse>> addOrUpdateName(@RequestBody NameUpdateRequest nameUpdateRequest, Authentication authentication){
+    public ResponseEntity<ApiResponse<UserDetails>> addOrUpdateName(@RequestBody NameUpdateRequest nameUpdateRequest, Authentication authentication){
         return  userService.addOrUpdateName(nameUpdateRequest.getName(),authentication.getName());
     }
     @PostMapping("/saveprofilepic")
@@ -26,7 +25,15 @@ public class UserController {
         return userService.getUser(authentication.getName());
     }
     @PutMapping("/update-about")
-    public ResponseEntity<ApiResponse<UserDetailsResponse>> updateAbout(@RequestBody AboutUpdateRequest aboutUpdateRequest, Authentication authentication){
+    public ResponseEntity<ApiResponse<UserDetails>> updateAbout(@RequestBody AboutUpdateRequest aboutUpdateRequest, Authentication authentication){
        return  userService.updateAbout(aboutUpdateRequest.getAbout(),authentication.getName());
+    }
+    @GetMapping("/contacts")
+    public ResponseEntity<ApiResponse<ContactResponse>> getContacts(Authentication authentication){
+        return userService.getContacts(authentication.getName());
+    }
+    @PostMapping("contacts")
+    public ResponseEntity<ApiResponse<AddContactResponse>> addContact(Authentication authentication, @RequestBody AddContactRequest addContactRequest){
+        return  userService.addContact(authentication.getName(),addContactRequest.getName(),addContactRequest.getPhoneNumber());
     }
 }

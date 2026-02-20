@@ -5,14 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @Setter
-public class UserDetailsResponse {
-    UserDetails user;
-    List<ConversationResponse> chats;
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class ContactBody {
+    String dpPresignedUrl;
+    String name;
+    String about;
 }
