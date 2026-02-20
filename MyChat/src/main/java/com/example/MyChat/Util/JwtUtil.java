@@ -1,6 +1,6 @@
 package com.example.MyChat.Util;
 
-import com.example.MyChat.repo.RepoUser;
+import com.example.MyChat.repo.jpa.RepoUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -14,7 +14,6 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 
 @Component

@@ -5,12 +5,10 @@ import com.example.MyChat.Util.OtpUtil;
 import com.example.MyChat.Util.Token;
 import com.example.MyChat.io.*;
 import com.example.MyChat.model.User;
-import com.example.MyChat.repo.RepoUser;
+import com.example.MyChat.repo.jpa.RepoUser;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

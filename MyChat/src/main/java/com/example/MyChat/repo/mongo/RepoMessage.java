@@ -1,4 +1,4 @@
-package com.example.MyChat.repo;
+package com.example.MyChat.repo.mongo;
 
 import com.example.MyChat.model.Message;
 import org.springframework.data.mongodb.repository.MongoRepository;

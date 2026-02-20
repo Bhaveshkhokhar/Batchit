@@ -1,6 +1,6 @@
 package com.example.MyChat.service;
 
-import com.example.MyChat.repo.RepoMessage;
+import com.example.MyChat.repo.mongo.RepoMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
